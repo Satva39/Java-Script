@@ -130,15 +130,30 @@ var company = [
     
 ]
 
+var a = company.reduce((sum,emp)=>sum+emp.employees.length,0)
+console.log(a)
+
+var b = company.find((com)=>com.employees.find((emp)=>emp.name === "riya")).name
+console.log(b);
+
+var c = company.reduce((sum, com) => sum + com.employees.reduce((empSum, emp) => empSum + emp.salary, 0),0);
+console.log("Average salary of all over compnies = " +c/2);
+
+var d = company.map((emp)=>emp.employees.filter((mar)=>mar.IsMarried===true))
+console.log(d);
+
+var e = company.reduce((total, comp) => total + comp.employees.reduce((sum, emp) => sum + emp.child, 0), 0);
+console.log(e);
+
+var f = company.map((com)=>com.employees.filter((emp)=>emp.gender==="female"))
+console.log(f);
+
+var g = company.reduce((count, com) => count + com.employees.filter(emp => emp.IsMarried === false).length,0);
+console.log(g);
+
+var h = company.reduce((total, com) => total + com.employees.length, 0);
+console.log(h);
 
 
-// 1.  Find the total number of employees in all companies.
-// 2. Find the company where the employee named "riya" works.
-// 3. Calculate the average salary of employees across all companies.
-// 4. Find the names of all employees who are married.
-// 5. Count the total number of children across all employees
 
-// 7. List all female employees.
-// 8. Count how many employees are not married.
-// 9. Find the email addresses of all employees earning more than 30,000.
-// 10. Identify the total number of employees for each company.
+// 9. Find the email addresses of all employees earning more than 30,000. can't solve
