@@ -155,5 +155,10 @@ var h = company.reduce((total, com) => total + com.employees.length, 0);
 console.log(h);
 
 
-
-// 9. Find the email addresses of all employees earning more than 30,000. can't solve
+company.forEach((com)=>{
+    com.employees.forEach((emp)=>{
+        if(emp.salary>30000){
+            console.log(emp.email)
+        }
+    })
+})
