@@ -15,8 +15,7 @@ function changeImage() {
 
     let mydiv = document.getElementById("mydiv");
 
-    console.log(selectedImageUrl);  // check if correct URL is coming
-
+    console.log(selectedImageUrl);
     mydiv.style.height = "200px";
     mydiv.style.width = "200px";
     mydiv.style.backgroundImage = `url('${selectedImageUrl}')`;
