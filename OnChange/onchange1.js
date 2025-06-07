@@ -1,0 +1,25 @@
+function changeColor(){
+
+    let color = document.getElementById("colors")
+    console.log(color.value);
+    mydiv.style.height = "200px"
+    mydiv.style.width = "200px"
+    mydiv.style.backgroundColor = color.value;
+    mydiv.style.margin = "100px 400px"
+
+}
+
+function changeImage() {
+    let imageSelect = document.getElementById("images");
+    let selectedImageUrl = imageSelect.value;
+
+    let mydiv = document.getElementById("mydiv");
+
+    console.log(selectedImageUrl);  // check if correct URL is coming
+
+    mydiv.style.height = "200px";
+    mydiv.style.width = "200px";
+    mydiv.style.backgroundImage = `url('${selectedImageUrl}')`;
+    mydiv.style.backgroundSize = "cover";
+    mydiv.style.margin = "100px 400px";
+}
