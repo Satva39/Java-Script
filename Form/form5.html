@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 500px;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .heading {
+        text-align: center;
+        font-size: 300%;
+        font-weight: lighter;
+        margin-bottom: 30px;
+    }
+
+    .inps {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    label {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .input-1,
+    .input-2 {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid black;
+        padding-left: 15px;
+        font-size: 15px;
+        outline: none;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .input-1:focus,
+    .input-2:focus {
+        border-color: #0000ff;
+        box-shadow: 0 0 5px #0000ff;
+        transform: scale(1.02);
+    }
+
+    .sub {
+        width: 100%;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgba(16, 16, 255, 0.8);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .sub:hover {
+        background-color: rgba(16, 16, 255, 1);
+        transform: scale(1.05);
+    }
+</style>
+<body>
+    
+    <form onsubmit="submitHandler(event)">
+        <div class="form">
+            <h1 class="heading">Registration Form</h1>
+            <div class="inps">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="input-1">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="input-2">
+
+                <label for="mobile">Mobile</label>
+                <input type="text" id="mobile" name="mobile" class="input-2">
+
+                <label for="password">Password</label>
+                <input type="text" id="password" name="password" class="input-1">
+
+
+                <input class="sub submit" type="submit" value="Register" style="margin-top: 20px;">
+            </div>
+        </div>
+
+
+    <script src="form5.js"></script>
+</body>
+</html>
