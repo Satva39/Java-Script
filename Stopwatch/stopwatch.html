@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch with Lap</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        div:first-of-type {
+            background: rgba(255,255,255,0.1);
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        #time {
+            background: rgba(255,255,255,0.1);
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            font-size: 3rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+
+        span {
+            margin: 0 5px;
+        }
+
+        button {
+            background: #00c6ff;
+            background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+            color: #fff;
+            border: none;
+            outline: none;
+            padding: 12px 28px;
+            margin: 0 10px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 14px 0 rgba(0,198,255,0.2);
+            transition: 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        #laps {
+            color: white;
+            margin-top: 30px;
+            font-size: 1rem;
+            height: 200px;
+            overflow-y: auto;
+            width: 300px;
+            text-align: left;
+        }
+
+        #laps div {
+            margin-bottom: 5px;
+            padding: 5px 10px;
+            background: rgba(255,255,255,0.05);
+            border-left: 4px solid #00c6ff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="time">
+        <span id="hour">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+        <span>:</span>
+        <span id="ms">00</span>
+    </div>
+
+    <div id="but">
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="reset()">Reset</button>
+        <button onclick="lap()">Lap</button>
+    </div>
+
+    <div id="laps"></div>
+
+    <script src="stopwatch.js"></script>
+</body>
+</html>
