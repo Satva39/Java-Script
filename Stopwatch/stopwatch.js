@@ -56,7 +56,7 @@ const reset = () => {
     mss.innerHTML = "00";
 
     clearInterval(x);
-    lapContainer.innerHTML = ""; // Clear all laps
+    lapContainer.innerHTML = "";
 };
 
 const lap = () => {
@@ -64,7 +64,6 @@ const lap = () => {
     const lapElement = document.createElement("div");
     lapElement.textContent = "Lap: " + lapTime;
 
-    // Make the first lap smaller
     if (lapContainer.children.length === 0) {
         lapElement.classList.add("first-lap");
     }
