@@ -19,8 +19,7 @@ next.addEventListener("click", () => {
     showImage(currentIndex);
 });
 
-// Time-lapse: Auto-slide every 3 seconds
 setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
-}, 3000);  // 3000 milliseconds = 3 seconds
+}, 3000);
