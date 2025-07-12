@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+</head>
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #1e1e2f;
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .game-container {
+        background-color: #2d2d44;
+        padding: 2rem;
+        border-radius: 20px;
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    .score {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .choices {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 1.5rem;
+    }
+
+    .choice {
+        padding: 1rem;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: #444466;
+        color: white;
+        transition: background-color 0.3s;
+    }
+
+    .choice:hover {
+        background-color: #555599;
+    }
+
+    .result{
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+</style>
+
+<body>
+    <div class="game-container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="score">
+            <p>You: <span id="user-score">0</span></p>
+            <p>Computer: <span id="comp-score">0</span></p>
+        </div>
+        <div class="choices">
+            <button class="choice" data-choice="rock">🪨 Rock</button>
+            <button class="choice" data-choice="paper">📄 Paper</button>
+            <button class="choice" data-choice="scissors">✂️ Scissors</button>
+        </div>
+        <div class="result" id="result">Make your move!</div>
+    </div>
+    <script src="rps.js"></script>
+</body>
+
+</html>
