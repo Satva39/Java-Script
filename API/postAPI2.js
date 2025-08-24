@@ -54,6 +54,7 @@ const getData = async()=>{
         let statusTD = document.createElement("td");
         let actionTD = document.createElement("td");
         let btn = document.createElement("button");
+        let btn2 = document.createElement("button");
 
         btn.innerText = "Delete";
         btn.className = "btn btn-danger";
@@ -69,6 +70,12 @@ const getData = async()=>{
 
         });
 
+        btn2.innerText = "Update"
+        btn2.className = "btn btn-primary";
+        btn2.addEventListener("click", async ()=>{
+            
+        })
+
         idTD.innerHTML = element._id;
         nameTD.innerHTML = element.name;
         emailTD.innerHTML = element.email;
@@ -83,6 +90,7 @@ const getData = async()=>{
         tr.appendChild(ageTD);
         tr.appendChild(statusTD);
         actionTD.appendChild(btn);
+        actionTD.appendChild(btn2);
         tr.appendChild(actionTD);
         tbody.appendChild(tr);
     });

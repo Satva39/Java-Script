@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="getAPI4.js" defer></script>
+
+  <style>
+    /* Background Gradient Animation */
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      padding: 20px;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Glassmorphism Container */
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    /* Title */
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      margin-bottom: 2rem;
+    }
+
+    /* Input + Button */
+    #cityInput {
+      border-radius: 15px;
+      padding: 14px;
+      font-size: 1.1rem;
+      border: none;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    #weatherForm button {
+      border-radius: 15px;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      border: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 14px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    #weatherForm button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(255, 154, 158, 0.5);
+    }
+
+    /* Table */
+    table {
+      margin-top: 2.5rem;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      width: 100%;
+      font-size: 1.2rem;
+    }
+
+    thead {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #000;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    thead th {
+      padding: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tbody td {
+      padding: 1.2rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    tbody tr:hover {
+      background: rgba(255,255,255,0.2);
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🌦 Weather Checker</h2>
+
+    <!-- Weather Form -->
+    <form id="weatherForm" class="mb-4">
+      <div class="row g-3">
+        <div class="col-md-8">
+          <input type="text" id="cityInput" class="form-control" placeholder="Enter city name using caps lock (e.g. MUMBAI)" required>
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="btn w-100">Get Weather</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Weather Table -->
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>Temperature 🌡️</th>
+            <th>Feels Like 🤔</th>
+            <th>Max 🔺</th>
+            <th>Min 🔻</th>
+            <th>Pressure 🌬️</th>
+            <th>Humidity 💧</th>
+            <th>Sea Level 🌊</th>
+            <th>Ground Level ⛰️</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Test (Monkeytype Clone)</title>
+  <style>
+    body {
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #111;
+      color: #eee;
+    }
+    #text {
+      max-width: 600px;
+      font-size: 24px;
+      line-height: 40px;
+    }
+    .correct { color: lime; }
+    .incorrect { color: red; }
+    #input {
+      margin-top: 20px;
+      padding: 10px;
+      width: 600px;
+      font-size: 20px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Monkeytype Clone 🐒</h1>
+  <div id="text"></div>
+  <input type="text" id="input" autofocus placeholder="Start typing...">
+  <div id="result"></div>
+
+  <script src="monkeytype.js"></script>
+</body>
+</html>
